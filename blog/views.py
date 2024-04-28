@@ -35,14 +35,13 @@ def blog_single(request,pid):
     return render(request,'blog/blog-single.html',context)
 
 def test(request):
-    #posts = get_object_or_404(Post,pk=pid)
-    #context ={'posts':posts}
+    if request.method == 'POST':
+        print("post")
+    elif request.method == "GET" :
+        print('get')
+    
     return render(request,'test.html')
-#def blog_category(request,cat_name):
-#    posts=Post.objects.filter(published_date__lte=timezone.now(),status=1)
-#    posts=posts.filter(category__name=cat_name)
-#    context={'posts':posts}
-#    return render(request,'blog/blog-home.html',context)
+
 def blog_search(request):
     posts=Post.objects.filter(published_date__lte=timezone.now(),status=1)
     if request.method == 'GET' :

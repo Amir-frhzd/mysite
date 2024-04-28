@@ -1,18 +1,16 @@
-{% load blog-tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width,initial-scale-1.0" >
+    <title>Form test</title>
 </head>
 <body>
-    <p>test: <h1>{% totalposts %}</h1> </p>
-    
-    
-        
-    
-    
+    <form action="{% url 'website:test' %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">submit</button>
+    </form>
 </body>
 </html>
