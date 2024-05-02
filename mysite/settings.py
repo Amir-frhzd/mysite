@@ -41,9 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'website.apps.WebsiteConfig',
+    'robots',
     'blog' ,
 ]
 SITE_ID=2
+# robots
+ROBOTS_USE_SITEMAP = True
+ROBOTS_USE_HOST = True
 from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
         messages.DEBUG: 'alert-secondary',
