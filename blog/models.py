@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 class Category(models.Model):
     name=models.CharField(max_length=255)
     def __str__(self):
@@ -20,5 +21,7 @@ class Post(models.Model):
         return ("%s-%s"%(self.title,self.id))
     class Meta:
         ordering = ['-created_date']
+    def get_absolute_url(self):
+        return reverse('blog:single',kwargs={'pid':self.id})
 
 # Create your models here.
