@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'multi_captcha_admin' ,
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,6 +84,10 @@ SUMMERNOTE_CONFIG = {
             ['view', ['fullscreen', 'codeview', 'help']],
         ],
     }   
+}
+# captcha admin setting 
+MULTI_CAPTCHA_ADMIN = {
+    'engine': 'simple-captcha',
 }
 from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
