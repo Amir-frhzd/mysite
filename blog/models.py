@@ -34,4 +34,8 @@ class Comment(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
     approved = models.BooleanField(default=False)
+    def __str__(self):
+        return self.name
+    class Meta:
+        ordering = ['-created_date']
 # Create your models here.
