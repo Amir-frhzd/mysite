@@ -7,7 +7,7 @@ from django.utils import timezone
 class LatestEntriesFeed(Feed):
     title = "Blog newest posts"
     link = "/rss/feed"
-    description = "Updates on changes and additions to police beat central."
+    description = "Best blog ever"
 
     def items(self):
         return Post.objects.filter(status=True,published_date__lte=timezone.now())
