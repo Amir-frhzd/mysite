@@ -35,6 +35,7 @@ urlpatterns = [
     path('robots.txt',include('robots.urls')),
     path("__debug__/", include("debug_toolbar.urls")),
     path('captcha/', include('captcha.urls')),
+    path('accounts/',include('accounts.urls')) ,
     
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

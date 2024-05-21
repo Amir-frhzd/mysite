@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "taggit",
     'captcha',
     'blog' ,
+    'accounts' ,
 ]
 SITE_ID=2
 # robots
@@ -196,3 +197,4 @@ INTERNAL_IPS = [
     
 ]
 X_FRAME_OPTIONS = "SAMEORIGIN"
+AUTHENTICATION_BACKENDS = ['accounts.backends.EmailOrUsernameModelBackend']
