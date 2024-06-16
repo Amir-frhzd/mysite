@@ -30,6 +30,7 @@ def contact_view(request):
     form = ContactForm()
     
 
+
     return render(request,'website/contact.html',{'form':form})
 
 
@@ -58,5 +59,6 @@ def newsletter_view(request):
     else:
         return HttpResponseRedirect('/')
 
-    
+def  under_construction(request):
+    return render(request,'website/template.html')       
 # Create your views here.

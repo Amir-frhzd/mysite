@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'captcha',
     'blog' ,
     'accounts' ,
+    'compressor',
 ]
 SITE_ID=2
 # robots
@@ -180,7 +181,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT=BASE_DIR/'static'
-
+#Compressor
+COMPRESS_ENABLED=True
+COMPRESS_OFFLINE=True
+STATICFILES_FINDERS =['django.contrib.staticfiles.finders.FileSystemFinder','django.contrib.staticfiles.finders.AppDirectoriesFinder','compressor.finders.CompressorFinder',]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
 
@@ -206,3 +210,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'amirrezafarahzadi@gmail.com'
 EMAIL_HOST_PASSWORD = 'nxaftffueusujggf'
+COMPRESS_ENABLED=True
+#SECURE_SSL_REDIRECT
+#SECURE_SSL_REDIRECT = True
